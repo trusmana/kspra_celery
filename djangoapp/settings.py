@@ -13,7 +13,7 @@ SECRET_KEY = '7s7gcigrd^%_wy4gl7aj)4%r=el2fl7p=^!vn@p6#mk0ea2r=%'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -111,3 +111,13 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR,'assets'),
 )
 
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.ksura.co.id'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'kspradjango@gmail.com'
+EMAIL_HOST_PASSWORD = '4999indonesia'
+DEFAULT_FROM_EMAIL = 'Team IT Kspra <memeberit@ksura.co.id>'
+ADMINS=(('tedi', 'tedi_black@ksura.co.id'),('hasan','hasanudin_it@ksura.co.id'),('firman','firman_kemal_it@ksura.co.id'),\
+    ('regina','regina_destiana_putri@ksura.co.id'),('erwin','erwin@ksura.co.id'),)

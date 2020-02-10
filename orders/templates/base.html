@@ -54,7 +54,8 @@
 							</a>
 							<ul class="dropdown-menu animation-dock">
 								<li class="dropdown-header">My profile</li>
-								<li><a href="{% url 'accounts:change_password' %}">Change Password</a></li>
+								{% if user.is_superuser %}<li ><a href="/admin/">Admin</a></li>{%endif%}
+                <li><a href="{% url 'password_reset'%}">Change Password</a></li>
 								<li class="divider"></li>
 								<li><a href="{% url 'accounts:logout' %}"><i class="fa fa-fw fa-power-off text-danger"></i> Logout</a></li>
 							</ul><!--end .dropdown-menu -->
@@ -156,7 +157,7 @@
 							</a>
 							<!--start submenu -->
 							<ul>
-								<li><a href="{% url 'accounts:change_password' %}" ><span class="title">Change Password</span></a></li>
+								<li><a href="" ><span class="title">Change Password</span></a></li>
 								<li><a href="{% url 'accounts:logout' %}" ><span class="title">Logout</span></a></li>
 							</ul><!--end /submenu -->
 						</li><!--end /menu-li -->
